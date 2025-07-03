@@ -38,6 +38,8 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -148,6 +150,9 @@
           tags:
           - PowerCell
           - PowerCellSmall
+        blacklist:
+          tags:
+          - NoRecharge  # Assmos - Crystallizer
 
 - type: entity
   parent: [ BaseItemRecharger, ConstructibleMachine ]
@@ -184,6 +189,9 @@
         whitelist:
           tags:
           - PowerCage
+        blacklist:
+          tags:
+          - NoRecharge  # Assmos - Crystallizer
   - type: Machine
     board: PowerCageRechargerCircuitboard
   - type: StaticPrice
@@ -208,9 +216,13 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
-        blacklist:  # Goobstation
+        # Goobstation
+          tags:
+          - FitsInCharger
+        blacklist:
           tags:
           - WizardWand
+          - NoRecharge  # Assmos - Crystallizer
           components:
           - MaterialEnergy
 
@@ -240,6 +252,7 @@
           tags:
           - PotatoBattery
           - WizardWand # Goobstation
+          - NoRecharge  # Assmos - Crystallizer
           components:  # Goobstation
           - MaterialEnergy
 
@@ -271,6 +284,7 @@
         blacklist:  # Goobstation
           tags:
           - WizardWand
+          - NoRecharge  # Assmos - Crystallizer
 
 - type: entity
   parent: BaseRecharger

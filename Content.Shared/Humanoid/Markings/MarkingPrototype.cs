@@ -6,6 +6,11 @@
 // SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 hivehum <ketchupfaced@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -43,9 +48,20 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("coloring")]
         public MarkingColors Coloring { get; private set; } = new();
 
+        /// <summary>
+        /// Do we need to apply any displacement maps to this marking? Set to false if your marking is incompatible
+        /// with a standard human doll, and is used for some special races with unusual shapes
+        /// </summary>
+        [DataField]
+        public bool CanBeDisplaced { get; private set; } = true;
+
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
 
+        // impstation edit - allow markings to support shaders
+		[DataField("shader")]
+		public string? Shader { get; private set; } = null;
+        // end impstation edit
         public Marking AsMarking()
         {
             return new Marking(ID, Sprites.Count);

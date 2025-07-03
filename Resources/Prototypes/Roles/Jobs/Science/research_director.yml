@@ -133,11 +133,12 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 36000 #10 hrs
-    - !type:OverallPlaytimeRequirement
-      time: 144000 #40 hrs
+  - !type:RoleTimeRequirement
+    role: JobScientist
+    time: 18000 #5 hrs
+  - !type:DepartmentTimeRequirement
+    department: Science
+    time: 36000 #10 hrs
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
@@ -158,6 +159,11 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  alternateTitles:
+  - ResearchDirectorTitleChief
+  - ResearchDirectorTitleManager
+  - ResearchDirectorTitleSupervisor
+
 
 - type: startingGear
   id: ResearchDirectorGear
@@ -168,3 +174,15 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
+
+- type: jobAlternateTitle
+  id: ResearchDirectorTitleChief
+  name: job-name-alt-rd-chief
+
+- type: jobAlternateTitle
+  id: ResearchDirectorTitleManager
+  name: job-name-alt-rd-manager
+
+- type: jobAlternateTitle
+  id: ResearchDirectorTitleSupervisor
+  name: job-name-alt-rd-supervisor
