@@ -193,6 +193,9 @@
     - sob
     - sobs
     - sobbing
+    - chora
+    - chorando
+    - T-T
 
 - type: emote
   id: Squish
@@ -282,6 +285,7 @@
     - claps
     - clapping
     - clapped
+    - palma
 
 - type: emote
   id: Snap
@@ -305,6 +309,7 @@
     - snaps their fingers
     - snapping fingers
     - snapped fingers
+    - estala os dedos
 
 - type: emote
   id: Thump
@@ -330,6 +335,7 @@
     - thumps her tail
     - thumps his tail
     - thumps its tail
+    - bate a calda
 
 - type: emote
   id: Salute
@@ -346,6 +352,9 @@
   chatTriggers:
     - salute
     - salutes
+    - sáuda
+    - o7
+    - sauda
 
 - type: emote
   id: Gasp
@@ -358,6 +367,9 @@
    - gasp
    - gasps
    - gasped
+   - sufoca
+   - sufocando
+   - sufocou
 
 - type: emote
   id: DefaultDeathgasp
@@ -447,6 +459,8 @@
     - beeps
     - beeped
     - beeping
+    - bipa
+    - bip
 
 - type: emote
   id: Chime
@@ -485,6 +499,9 @@
     - buzzes twice
     - buzzing twice
     - buzzed twice
+    - apita
+    - apita duas vezes
+    - apitaduasvezes
 
 - type: emote
   id: Ping
