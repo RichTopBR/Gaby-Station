@@ -8,13 +8,13 @@ chatsan-word-3 = ong
 chatsan-replacement-3 = por deus
 
 chatsan-word-4 = wtf
-chatsan-replacement-4 = que merda é essa
+chatsan-replacement-4 = que porra é essa
 
 chatsan-word-5 = wth
-chatsan-replacement-5 = que porra é essa
+chatsan-replacement-5 = que merda é essa
 
 chatsan-word-6 = tf
-chatsan-replacement-6 = que merda
+chatsan-replacement-6 = que porra
 
 chatsan-word-7 = afaik
 chatsan-replacement-7 = pelo que eu sei
@@ -38,7 +38,7 @@ chatsan-word-14 = ur
 chatsan-replacement-14 = seu
 
 chatsan-word-15 = ffs
-chatsan-replacement-15 = pelo amor de deus
+chatsan-replacement-15 = pelo amor de Deus
 
 chatsan-word-16 = iirc
 chatsan-replacement-16 = se eu lembro bem
@@ -315,7 +315,7 @@ chatsan-word-113 = dnv
 chatsan-replacement-113 = de novo
 
 chatsan-word-114 = qm
-chatsan-replacement-114 = intendente logístico
+chatsan-replacement-114 = Intendente Logístico
 
 chatsan-word-115 = ce
 chatsan-replacement-115 = Engenheiro Chefe
@@ -324,7 +324,7 @@ chatsan-word-116 = cmo
 chatsan-replacement-116 = Médico Chefe
 
 chatsan-word-117 = rd
-chatsan-replacement-117 = diretor de pesquisa
+chatsan-replacement-117 = Diretor de Pesquisa
 
 chatsan-word-118 = hos
 chatsan-replacement-118 = Chefe da Segurança
