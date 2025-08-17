@@ -65,18 +65,27 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Froffy025 <scotttaco025@gmail.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
+using Content.Shared.CCVar;
 using Robust.Shared.Collections;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Content.Shared.Preferences.Loadouts;
 
@@ -129,6 +138,7 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
     {
         var groupRemove = new ValueList<string>();
         var protoManager = collection.Resolve<IPrototypeManager>();
+        var configManager = collection.Resolve<IConfigurationManager>();
 
         if (!protoManager.TryIndex(Role, out var roleProto))
         {
@@ -148,10 +158,11 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
         if (EntityName != null)
         {
             var name = EntityName.Trim();
+            var maxNameLength = configManager.GetCVar(CCVars.MaxNameLength);
 
-            if (name.Length > HumanoidCharacterProfile.MaxNameLength)
+            if (name.Length > maxNameLength)
             {
-                EntityName = name[..HumanoidCharacterProfile.MaxNameLength];
+                EntityName = name[..maxNameLength];
             }
 
             if (name.Length == 0)
@@ -292,6 +303,7 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
                 continue;
 
             var loadouts = new List<Loadout>();
+
             SelectedLoadouts[group] = loadouts;
 
             if (groupProto.MinLimit > 0)
@@ -302,6 +314,7 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
                     // Reached the limit, time to stop
                     if (loadouts.Count >= groupProto.MinLimit)
                         break;
+
 
                     if (!protoManager.TryIndex(protoId, out var loadoutProto))
                         continue;

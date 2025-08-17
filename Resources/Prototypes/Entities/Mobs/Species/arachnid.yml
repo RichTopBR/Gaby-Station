@@ -25,11 +25,16 @@
 # SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
+# SPDX-FileCopyrightText: 2025 Dreykor <160512778+Dreykor@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 HTML/Crystal <152909599+HTMLSystem@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Michelle Szinger <chell@alterae.online>
 # SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tiniest Shark <head.rebel@yahoo.com>
@@ -114,6 +119,13 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
+  - type: LanguageKnowledge # Einstein Engines - Language
+    speaks:
+    - TauCetiBasic
+    - Chittin # Until they have a species-specific
+    understands:
+    - TauCetiBasic
+    - Chittin # Until they have a species-specific
   - type: Sprite # I'd prefer if these maps were better. Insert map pun here.
     layers:
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
@@ -125,6 +137,8 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+      - map: [ "enum.HumanoidVisualLayers.Underwear" ] # DeltaV
+      - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # DeltaV
       - map: ["jumpsuit"]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
@@ -132,13 +146,11 @@
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "gloves" ]
       - map: [ "shoes" ]
-      - map: [ "ears" ]
       - map: [ "culteyes" ] # funky cult
         sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
         state: "arachnid"
         shader: unshaded
         visible: false
-      - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
@@ -148,6 +160,8 @@
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ] # Do these need to be here? (arachnid hair arachnid hair)
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "ears" ]
+      - map: [ "eyes" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "maskalt" ]
       - map: [ "mask" ]

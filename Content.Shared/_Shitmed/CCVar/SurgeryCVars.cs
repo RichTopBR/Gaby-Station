@@ -18,7 +18,7 @@ public sealed class SurgeryCVars : CVars
     /// Whether or not players can operate on themselves.
     /// </summary>
     public static readonly CVarDef<bool> CanOperateOnSelf =
-        CVarDef.Create("surgery.can_operate_on_self", true, CVar.SERVERONLY);
+        CVarDef.Create("surgery.can_operate_on_self", false, CVar.SERVERONLY);
 
     /// <summary>
     /// How many times per second do we want to heal wounds.
@@ -83,6 +83,12 @@ public sealed class SurgeryCVars : CVars
     /// </summary>
     public static readonly CVarDef<float> OrganTraumaRunSpeedSlowdown =
         CVarDef.Create("traumas.organ_run_speed_slowdown", 0.6f, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    /// How much damage needs to happen in a single attack to destroy a part?
+    /// </summary>
+    public static readonly CVarDef<float> DestroySeverityMultiplier =
+        CVarDef.Create("traumas.destroy_severity_multiplier", 4f, CVar.SERVER | CVar.REPLICATED);
 
     #endregion
 

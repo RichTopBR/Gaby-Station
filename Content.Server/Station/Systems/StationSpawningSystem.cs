@@ -60,7 +60,6 @@
 // SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Unisol <1929445+Unisol@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
@@ -81,9 +80,11 @@
 // SPDX-FileCopyrightText: 2025 AgentePanela <agentepanela@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 // SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
@@ -92,10 +93,8 @@
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 joshepvodka <86210200+joshepvodka@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 joshepvodka <guilherme.ornel@gmail.com>
-// SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Access.Systems;
 using Content.Server.Humanoid;
@@ -115,8 +114,6 @@ using Content.Shared.NameIdentifier;
 using Content.Shared.PDA;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
-using Content.Shared.Random;
-using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.Station;
 using JetBrains.Annotations;
@@ -124,7 +121,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Station.Systems;
@@ -145,15 +141,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly PdaSystem _pdaSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    private bool _randomizeCharacters;
-
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
-        base.Initialize();
-        Subs.CVar(_configurationManager, CCVars.ICRandomCharacters, e => _randomizeCharacters = e, true);
-    }
 
     /// <summary>
     /// Attempts to spawn a player character onto the given station.
@@ -236,31 +223,12 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             return jobEntity;
         }
 
-        string speciesId;
-        if (_randomizeCharacters)
-        {
-            var weightId = _configurationManager.GetCVar(CCVars.ICRandomSpeciesWeights);
-            var weights = _prototypeManager.Index<WeightedRandomSpeciesPrototype>(weightId);
-            speciesId = weights.Pick(_random);
-        }
-        else if (profile != null)
-        {
-            speciesId = profile.Species;
-        }
-        else
-        {
-            speciesId = SharedHumanoidAppearanceSystem.DefaultSpecies;
-        }
+        string speciesId = profile != null ? profile.Species : SharedHumanoidAppearanceSystem.DefaultSpecies;
 
         if (!_prototypeManager.TryIndex<SpeciesPrototype>(speciesId, out var species))
             throw new ArgumentException($"Invalid species prototype was used: {speciesId}");
 
         entity ??= Spawn(species.Prototype, coordinates);
-
-        if (_randomizeCharacters)
-        {
-            profile = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
-        }
 
         if (profile != null)
         {

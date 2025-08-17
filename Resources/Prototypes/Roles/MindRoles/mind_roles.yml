@@ -159,8 +159,6 @@
     subtype: role-subtype-dragon
     exclusiveAntag: true
   - type: DragonRole
-  - type: RoleBriefing
-    briefing: dragon-role-briefing
 
 # Ninja
 - type: entity
@@ -300,3 +298,14 @@
     exclusiveAntag: true
     subtype: role-subtype-zombie
   - type: ZombieRole
+
+# Vampire
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleVampire
+  name: Vampire Role
+  components:
+  - type: MindRole
+    antagPrototype: Vampire
+  - type: VampireRole

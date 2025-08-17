@@ -109,6 +109,9 @@ ui-options-misc-label = Misc
 ui-options-interface-label = Interface
 
 
+ui-options-auto-fill-highlights = Auto-fill the highlights with the character's information
+ui-options-highlights-color = Highlighs color:
+ui-options-highlights-color-example = This is an highlighted text!
 ui-options-show-held-item = Show held item next to cursor
 ui-options-show-combat-mode-indicators = Show combat mode indicators with cursor
 ui-options-opaque-storage-window = Opaque storage window
@@ -182,6 +185,7 @@ ui-options-header-general = General
 
 ui-options-hotkey-keymap = Use US QWERTY Keys
 ui-options-hotkey-toggle-walk = Toggle Walk
+ui-options-hotkey-default-walk = Walk by default
 
 ui-options-function-move-up = Move Up
 ui-options-function-move-left = Move Left
@@ -208,6 +212,7 @@ ui-options-function-alt-activate-item-in-world = Alternative activate item in wo
 ui-options-function-drop = Drop item
 ui-options-function-examine-entity = Examine
 ui-options-function-swap-hands = Swap hands
+ui-options-function-swap-hands-reverse = Swap hands (other direction)
 ui-options-function-move-stored-item = Move stored item
 ui-options-function-rotate-stored-item = Rotate stored item
 ui-options-function-save-item-location = Save item location
@@ -285,16 +290,16 @@ ui-options-function-hotbar7 = Hotbar slot 7
 ui-options-function-hotbar8 = Hotbar slot 8
 ui-options-function-hotbar9 = Hotbar slot 9
 ui-options-function-hotbar0 = Hotbar slot 0
-ui-options-function-hotbarshift1 = Hotbar slot Shift+1
-ui-options-function-hotbarshift2 = Hotbar slot Shift+2
-ui-options-function-hotbarshift3 = Hotbar slot Shift+3
-ui-options-function-hotbarshift4 = Hotbar slot Shift+4
-ui-options-function-hotbarshift5 = Hotbar slot Shift+5
-ui-options-function-hotbarshift6 = Hotbar slot Shift+6
-ui-options-function-hotbarshift7 = Hotbar slot Shift+7
-ui-options-function-hotbarshift8 = Hotbar slot Shift+8
-ui-options-function-hotbarshift9 = Hotbar slot Shift+9
-ui-options-function-hotbarshift0 = Hotbar slot Shift+0
+ui-options-function-hotbar-shift1 = Hotbar slot Shift+1
+ui-options-function-hotbar-shift2 = Hotbar slot Shift+2
+ui-options-function-hotbar-shift3 = Hotbar slot Shift+3
+ui-options-function-hotbar-shift4 = Hotbar slot Shift+4
+ui-options-function-hotbar-shift5 = Hotbar slot Shift+5
+ui-options-function-hotbar-shift6 = Hotbar slot Shift+6
+ui-options-function-hotbar-shift7 = Hotbar slot Shift+7
+ui-options-function-hotbar-shift8 = Hotbar slot Shift+8
+ui-options-function-hotbar-shift9 = Hotbar slot Shift+9
+ui-options-function-hotbar-shift0 = Hotbar slot Shift+0
 ui-options-function-loadout1 = Hotbar Loadout 1
 ui-options-function-loadout2 = Hotbar Loadout 2
 ui-options-function-loadout3 = Hotbar Loadout 3
@@ -362,14 +367,20 @@ cmd-options-help = Usage: options [tab]
 
 ## Accessibility menu
 
+ui-options-accessability-header-visuals = Visuals
+ui-options-accessability-header-content = Content
+
 ui-options-enable-color-name = Add colors to character names
 ui-options-colorblind-friendly = Colorblind friendly mode
 ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-screen-shake-intensity = Screen shake intensity
+
 ui-options-chat-window-opacity = Chat window opacity
 ui-options-speech-bubble-text-opacity = Speech bubble text opacity
 ui-options-speech-bubble-speaker-opacity = Speech bubble speaker opacity
 ui-options-speech-bubble-background-opacity = Speech bubble background opacity
+
+ui-options-censor-nudity = Censor character nudity
 
 ## Admin menu
 

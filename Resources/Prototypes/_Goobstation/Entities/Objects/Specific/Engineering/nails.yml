@@ -1,4 +1,8 @@
+# SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
+# SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
+# SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -39,7 +43,7 @@
     onlyCollideWhenShot: true
     damage:
       types:
-        Piercing: 5
+        Piercing: 3
       armorPenetration: -1.75 # Very shitty against armor. Pro tip: target unarmored body parts
   - type: Fixtures
     fixtures:
@@ -76,6 +80,8 @@
       whitelist:
         components:
         - EngineeringStaff
+  - type: Reflective
+    reflective: NonEnergy
 
 - type: entity
   name: nail (armor-piercing)
@@ -88,8 +94,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
-      armorPenetration: 0.75
+        Piercing: 3
+      armorPenetration: 0.65
   - type: ProjectileDamageWhitelist
     damage: # Slightly worse for repairs
       types:
@@ -111,7 +117,7 @@
       tags:
       - Nail
     proto: Nail
-    capacity: 100
+    capacity: 80
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
